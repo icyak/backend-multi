@@ -6,7 +6,7 @@ RUN CGO_ENABLED=0 GOOS=linux go test -v
 
 
 FROM golang:alpine AS builder
-COPY main.go .
+COPY --from=tester main.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o backend .
 
 

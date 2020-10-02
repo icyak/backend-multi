@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Build the Docker image
-    - run: docker build . --file Dockerfile --tag icyak/backend-multi:latest #--tag icyak/ll-nginx:latest
+    - run: docker build . --file Dockerfile --tag icyak/backend-multi:latest 
     - uses: actions/setup-node@v1
     - uses: docker/build-push-action@v1
       with:

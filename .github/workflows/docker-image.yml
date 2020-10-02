@@ -25,4 +25,3 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         push: true
-        tags: icyak/backend-multi:latest

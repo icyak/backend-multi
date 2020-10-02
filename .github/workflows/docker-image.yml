@@ -22,7 +22,13 @@ jobs:
           username: icyak
           password: ${{ secrets.DOCKERHUBPASS }}
     - name: Push to Docker Hub
-      uses: docker/build-push-action@v1
+#      uses: docker/build-push-action@v1
+#      with:
+#        push: true
+#        tag: latest
+      uses: docker/build-push-action@v2
       with:
+        context: .
+        file: ./Dockerfile
         push: true
-        tag: latest
+        tags: icyak/backend-multi:latest

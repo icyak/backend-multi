@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag latest
+      run: docker build . --file Dockerfile 
     - name: Check out the repo
       uses: actions/checkout@v2     
     - name: Docker Login
@@ -25,3 +25,4 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         push: true
+        tag: latest

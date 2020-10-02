@@ -1,20 +1,19 @@
+  
 name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
-    name: Build Image from source and test it 
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the repo
-      uses: actions/checkout@v2   
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag icyak/backend-multi:latest
+    - uses: actions/checkout@v2
+      name: Build the Docker image
+    - run: docker build . --file Dockerfile --tag icyak/backend-multi:latest #--tag icyak/ll-nginx:latest
     - uses: actions/setup-node@v1
     - uses: docker/build-push-action@v1
       with:

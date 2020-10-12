@@ -24,7 +24,7 @@ func CheckAppHealth() (int, string) {
 func handler(w http.ResponseWriter, r *http.Request) {
 	if code, _ := CheckAppHealth(); code != 500 {
 		requestCounter++
-		fmt.Fprintf(w, "Hi there, got %d requests, running on %s, I love %s! HEHskuska", requestCounter, hostname, r.URL.Path[1:])
+		fmt.Fprintf(w, "Hi there, got %d requests, running on %s, I love %s! skuska", requestCounter, hostname, r.URL.Path[1:])
 	} else {
 		w.WriteHeader(code)
 	}
